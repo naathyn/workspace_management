@@ -29,7 +29,7 @@
   margin: 0 0 0 22px;
 }
 
-.css-treeview input ~ ul{
+.css-treeview input ~ ul {
   display: none;
 }
 
@@ -91,7 +91,7 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-  .css-treeview{
+  .css-treeview {
     -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
   }
 
