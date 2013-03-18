@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require modernizr
 //= require bootstrap
-//= require nav-tabs
+//= require_tree .
 
 $(function(){$('.page-fade').addClass('faade');});
