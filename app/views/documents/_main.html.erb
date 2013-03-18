@@ -1,9 +1,9 @@
-<div class="span5 offset1">
-  <blockkquote>
-    <p class="lead"><%= document.title %> <br /><small><%= document.path %></small></p>
-    <p><%= document.content %></p>
+<li class="span4">
+  <blockquote>
+    <p class="lead"><%= document.title %> <br /><small><%= time_ago_in_words(document.created_at) %> ago.</small></p>
+    <span class="content"><%= document.content %></span>
     <small>
-      <%= time_ago_in_words(document.created_at) %> ago.
+      <%= document.path %>
     </small>
-  </blockkquote>
-</div>
+  </blockquote>
+</li>
