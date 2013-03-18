@@ -5,6 +5,10 @@ class Document < ActiveRecord::Base
   validates_presence_of :title, :content, :folder_id
 
   def path
-    File.join(folder.path, title).gsub(/\s/, '_').downcase
+    begin
+      File.join(folder.path, title).gsub(/\s/, '_').downcase
+    rescue NoMethodError
+      File.join(folder.sub_path, title).gsub(/\s/, '_').downcase
+    end
   end
 end

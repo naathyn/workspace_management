@@ -12,4 +12,8 @@ class Folder < ActiveRecord::Base
   def path
     File.join(directory.name, name).gsub(/\s/, '_').downcase
   end
+
+  def sub_path
+    File.join(subfolder.directory.name, subfolder.name, name).gsub(/\s/, '_').downcase
+  end
 end
