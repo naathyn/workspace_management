@@ -1,0 +1,24 @@
+<legend> <%= @title %> </legend>
+
+<div class="row-fluid">
+  <div class="page-fade">
+
+    <ul class="nav nav-tabs">
+      <li> <a href="#folder-tab"> New Folder </a> </li>
+      <li> <a href="#subfolder-tab"> New Subfolder </a> </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane" id="folder-tab">
+        <legend> New Folder </legend>
+        <%= render 'form' %>
+      </div>
+
+      <div class="tab-pane" id="subfolder-tab">
+        <legend> New Subfolder </legend>
+        <%= render 'sub_form' %>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/.bundle
+/vendor/bundle/
+/db/*.sqlite3
+
+/log/*
+/tmp/*
+/doc/*
+
+.rvmrc
+
+**.swp
+*~
+*.save
+.project
+.idea

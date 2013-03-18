@@ -1,0 +1,9 @@
+<div class="span5 offset1">
+  <blockkquote>
+    <p class="lead"><%= document.title %> <small><%= document.path %></small> </p>
+    <p><%= document.content %></p>
+    <small>
+      <%= time_ago_in_words(document.created_at) %> ago.
+    </small>
+  </blockkquote>
+</div>

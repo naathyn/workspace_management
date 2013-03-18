@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> <%= full_title(yield(:title)) %> </title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Yolo" %>">
+    <meta name="author" content="<%= content_for?(:author) ? yield(:author) : "Nathan Couch" %>">
+      <%= stylesheet_link_tag "application", media: "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+      <%= render 'layouts/shim' %>
+      <%= yield(:head) %>
+    </head>
+    <body>
+      <div class="page-wrapper" id="main" role="main">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <%= render 'layouts/footer' %>
+      </div>
+    </footer>
+  </body>
+</html>

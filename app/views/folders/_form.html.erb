@@ -1,0 +1,13 @@
+<%= form_for @folder  do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name, "Name Of This Folder." %>
+    <%= f.text_field :name, placeholder: 'My Folder' %>
+
+    <%= f.label :directory_id %>
+    <%= f.select :directory_id, Directory.all.map { |directory|
+        [directory.name, directory.id]
+    } %>
+
+    <%= f.submit "Let's do this!", class: "btn btn-large btn-success" %>
+<% end %>

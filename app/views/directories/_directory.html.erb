@@ -1,0 +1,21 @@
+<!-- Begin Directory -->
+<li>
+  <input type="checkbox" id="<%= directory.id %>" checked="checked" />
+  <label for="<%= directory.name %>"><%= directory.name %></label>
+  <ul>
+  <% directory.folders.each do |folder| %>
+    <!-- Parent Folder Tree -->
+    <li>
+      <input type="checkbox" id="<%= folder.id %>" />
+      <label for="<%= folder.name %>"><%= folder.name %></label>
+      <ul>
+      <% if folder.subfolders.any? %>
+        <%= render directory.folders %>
+      <% end %>
+      <!-- Parent Documents -->
+      <%= render folder.documents %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+</li>

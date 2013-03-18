@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <aside class="span4">
+    <input type="text" class="search-query" placeholder="Search"
+      data-provide="typeahead" data-source='<%= @search %>' />
+    <div class="css-treeview">
+      <ul> <%= render @directories %> </ul>
+    </div>
+  </aside>
+
+  <aside class="span8">
+    <ul class="page-fade nav nav-tabs">
+      <li class="active"> <a href="#overview"> Overview </a> </li>
+      <li> <a href="#directory-tab"> New Directory </a> </li>
+      <li> <a href="#folder-tab"> New Folder </a> </li>
+      <li> <a href="#subfolder-tab"> New Subfolder </a> </li>
+      <li> <a href="#document-tab"> New Document </a> </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane active" id="overview">
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <%= render partial: 'documents/main', collection: @documents, as: :document %>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="directory-tab">
+        <legend> New Directory </legend>
+        <%= render 'directories/form' %>
+      </div>
+
+      <div class="tab-pane" id="folder-tab">
+        <legend> New Folder </legend>
+          <%= render 'form' %>
+      </div>
+
+      <div class="tab-pane" id="subfolder-tab">
+        <legend> New Subfolder </legend>
+        <% unless @folders.empty? %>
+          <%= render 'sub_form' %>
+        <% else %>
+          <p class="lead"> Create a folder first! </p>
+        <% end %>
+      </div>
+
+      <div class="tab-pane" id="document-tab">
+        <legend> New Document </legend>
+        <%= render 'documents/form' %>
+      </div>
+
+    </div><!-- tab-content -->
+  </aside>
+</div>

@@ -1,0 +1,16 @@
+<%= form_for @document do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :folder_id %>
+    <%= f.select :folder_id, Folder.all.map { |folder|
+      [folder.name, folder.id]
+    } %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, rows: 10 %>
+
+  <%= f.submit "Create Your Document", class: "btn btn-large btn-success" %>
+<% end %>

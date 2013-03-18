@@ -1,0 +1,8 @@
+<%= form_for @directory do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name, "An easy to go by name for the directory" %>
+    <%= f.text_field :name, placeholder: "Workspace" %>
+
+  <%= f.submit "Start Your Directory", class: "btn btn-large btn-primary" %>
+<% end %>
