@@ -116,7 +116,7 @@ li {
 footer {
   clear: both;
   margin: 0px 2%;
-  min-width: 767px;
+  min-width: 600px;
   padding: 1em;
   border: 1px solid $userBorder;
   color: $grayLight;
@@ -170,7 +170,7 @@ aside {
   text-shadow: 0px 1px 1px white;
   border-bottom-width: 0;
   min-height: 100%;
-  min-width: 667px;
+  min-width: 600px;
   margin: -1.4em 2% auto;
   padding: 1.5em 1em 2em;
   @include inline-container;

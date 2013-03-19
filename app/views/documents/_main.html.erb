@@ -2,5 +2,8 @@
   <blockquote>
     <p class="lead"><%= document.title %> <br /><small><%= time_ago_in_words(document.created_at) %> ago.</small></p>
     <span class="content"><%= document.content %></span>
+    <small>
+      <%= document.path %>
+    </small>
   </blockquote>
 </li>
