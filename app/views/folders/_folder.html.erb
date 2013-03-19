@@ -1,21 +1,19 @@
-<% folder.subfolders.each do |sub| %>
-  <!-- Begin Subfolder Tree -->
-  <li>
-    <input type="checkbox" id="<%= sub.id %>" />
-    <label for="<%= sub.name %>"><%= sub.name %></label>
-    <ul>
-      <% sub.subfolders.each do |sub_folder| %>
-        <li>
-          <input type="checkbox" id="<%= sub_folder.id %>" />
-          <label for="<%= sub_folder.name %>"><%= sub_folder.name %></label>
-          <ul>
-            <%= render sub_folder.documents %>
-            <%= render sub_folder.subfolders %>
-          </ul>
-        </li>
-      <% end %>
-      <!-- Subfolder Documents -->
-      <%= render sub.documents %>
-    </ul>
-  </li>
-<% end %>
+<!-- Begin Subfolder Tree -->
+<li>
+  <input type="checkbox" id="<%= folder.id %>" />
+  <label for="<%= folder.name %>"><%= folder.name %></label>
+  <ul>
+    <% folder.subfolders.each do |subfolder| %>
+      <li>
+        <input type="checkbox" id="<%= subfolder.id %>" />
+        <label for="<%= subfolder.name %>"><%= subfolder.name %></label>
+        <ul>
+          <%= render subfolder.documents %>
+          <%= render subfolder.subfolders %>
+        </ul>
+      </li>
+    <% end %>
+    <!-- Subfolder Documents -->
+    <%= render folder.documents %>
+  </ul>
+</li>
