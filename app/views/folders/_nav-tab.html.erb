@@ -31,7 +31,11 @@
 
       <div class="tab-pane" id="folder-tab">
         <legend> New Folder </legend>
+        <% unless @directories.empty? %>
           <%= render 'form' %>
+        <% else %>
+          <p class="lead"> Create a directory first! </p>
+        <% end %>
       </div>
 
       <div class="tab-pane" id="subfolder-tab">
@@ -45,7 +49,11 @@
 
       <div class="tab-pane" id="document-tab">
         <legend> New Document </legend>
-        <%= render 'documents/form' %>
+        <% unless @folders.empty? %>
+          <%= render 'documents/form' %>
+        <% else %>
+          <p class="lead"> Create a folder first! </p>
+        <% end %>
       </div>
 
     </div><!-- tab-content -->
